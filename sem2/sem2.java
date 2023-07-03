@@ -1,4 +1,4 @@
-package sem2;
+
 // Задание
 // 1) Напишите метод, который определит тип (расширение) файлов из текущей папки и выведет в консоль результат вида
 // 1 Расширение файла: txt
@@ -21,7 +21,7 @@ package sem2;
 //     }
     
 //     public static String get_extention(String file) {
-//         int index = file.lastIndexOf(".");
+//        int index = file.lastIndexOf(".");
 //         if (index == -1)
 //             return "";
 //         return file.substring(index + 1);
