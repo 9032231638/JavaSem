@@ -32,7 +32,7 @@ package sem3;
 //             for (int i = a.size() - 1; i >= 0; i--) {
 //                 int even = a.get(i) % 2;
 //                 if (even == 0) {
-//                     System.out.println("Четное число:" + a.get(i));
+//                     System.out.println("Четное число: " + a.get(i));
 //                     a.remove(i);
 //                 }
 //             }
