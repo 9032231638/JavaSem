@@ -70,26 +70,26 @@ package sem3;
 // ====================================================================================================================
 // Решение
 
-import java.util.*;
-public class sem3 {
-    static void planetsCounter(int n){
-        List<String> listPlanets = List.of("Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн");
-        List<String> randPlanets = new ArrayList<String>(n);
-        int count = new int[listPlanets.size()];
+// import java.util.*;
+// public class sem3 {
+//     static void planetsCounter(int n){
+//         List<String> listPlanets = List.of("Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн");
+//         List<String> randPlanets = new ArrayList<String>(n);
+//         int count = new int[listPlanets.size()];
 
-        Random rand = new Random();
+//         Random rand = new Random();
 
-        for (int i = 0; i < n; i++) {
-            randPlanets.add(listPlanets.get(rand.nextInt(listPlanets.size())));
-            System.out.println(randPlanets.get(i) + " ");
-            counts[listPlanets.indexOf(listPlanets.get(i))]++;
-        }
-        System.out.println();
+//         for (int i = 0; i < n; i++) {
+//             randPlanets.add(listPlanets.get(rand.nextInt(listPlanets.size())));
+//             System.out.println(randPlanets.get(i) + " ");
+//             counts[listPlanets.indexOf(listPlanets.get(i))]++;
+//         }
+//         System.out.println();
 
-    for (String planet : randPlanets)  {
+//     for (String planet : randPlanets)  {
 
-    }
-    }
+//     }
+//     }
     
-}
+// }
     
