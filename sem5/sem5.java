@@ -1,26 +1,34 @@
-// package sem5;
+// Задание
+
+// Реализуйте структуру телефонной книги с помощью HashMap.
+// Программа также должна учитывать, что во входной структуре будут повторяющиеся имена с разными телефонами, их необходимо считать, как одного человека с разными телефонами.
+// Вывод должен быть отсортирован по убыванию числа телефонов.
+
+// Решение
+// ================================================================================================================
+
 // import java.util.*;
 // public class sem5 {
 //     public static void main(String[] args) {
 //         Map<String, List<String>> phoneBook = new HashMap<>();
-//         phoneBook.put("Иван Иванов", Arrays.asList("181-811", "262-225"));
-//         phoneBook.put("Светлана Петрова", Collections.singletonList("433-303"));
-//         phoneBook.put("Кристина Белова", Collections.singletonList("344-344"));
-//         phoneBook.put("Анна Мусина", Collections.singletonList("545-587"));
-//         phoneBook.put("Анна Крутова", Collections.singletonList("612-426"));
-//         phoneBook.put("Иван Юрин", Collections.singletonList("731-957"));
-//         phoneBook.put("Петр Лыков", Collections.singletonList("158-887"));
-//         phoneBook.put("Павел Чернов", Collections.singletonList("699-399"));
-//         phoneBook.put("Петр Чернышов", Arrays.asList("987-874", "113-552"));
-//         phoneBook.put("Мария Федорова", Collections.singletonList("811-722"));
-//         phoneBook.put("Марина Светлова", Collections.singletonList("538-444"));
-//         phoneBook.put("Мария Савина", Collections.singletonList("359-666"));
-//         phoneBook.put("Мария Рыкова", Collections.singletonList("737-811"));
-//         phoneBook.put("Марина Лугова", Arrays.asList("566-442", "753-275"));
-//         phoneBook.put("Анна Владимирова", Collections.singletonList("141-033"));
-//         phoneBook.put("Иван Мечников", Collections.singletonList("202-404"));
-//         phoneBook.put("Петр Петин", Collections.singletonList("330-550"));
-//         phoneBook.put("Иван Ежов", Collections.singletonList("454-656"));
+//         phoneBook.put("Иван Арбузов", Arrays.asList("81-811", "62-225"));
+//         phoneBook.put("Светлана Борисова", Collections.singletonList("33-303"));
+//         phoneBook.put("Екатерина Белова", Collections.singletonList("44-344"));
+//         phoneBook.put("Анна Володина", Collections.singletonList("45-587"));
+//         phoneBook.put("Анна Круглова", Collections.singletonList("12-426"));
+//         phoneBook.put("Иван Горин", Collections.singletonList("31-957"));
+//         phoneBook.put("Петр Лацков", Collections.singletonList("58-887"));
+//         phoneBook.put("Павел Мамаев", Collections.singletonList("99-399"));
+//         phoneBook.put("Петр Николаев", Arrays.asList("87-874", "13-552"));
+//         phoneBook.put("Мария Осипова", Collections.singletonList("11-722"));
+//         phoneBook.put("Марина Орлова", Collections.singletonList("38-444"));
+//         phoneBook.put("Мария Савина", Collections.singletonList("59-666"));
+//         phoneBook.put("Мария Ракова", Collections.singletonList("37-811"));
+//         phoneBook.put("Марина Сысоева", Arrays.asList("66-442", "53-275"));
+//         phoneBook.put("Анна Тихомирова", Collections.singletonList("41-033"));
+//         phoneBook.put("Иван Ухов", Collections.singletonList("12-404"));
+//         phoneBook.put("Петр Федин", Collections.singletonList("30-550"));
+//         phoneBook.put("Иван Чижов", Collections.singletonList("54-656"));
 
 //         Map<String, Integer> nameCount = new HashMap<>();
 //         for (String name : phoneBook.keySet()) {
