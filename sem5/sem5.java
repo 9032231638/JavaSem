@@ -1,48 +1,134 @@
+
+import java.util.*;
+
 // Задание
 
 // Реализуйте структуру телефонной книги с помощью HashMap.
-// Программа также должна учитывать, что во входной структуре будут повторяющиеся имена с разными телефонами, их необходимо считать, как одного человека с разными телефонами.
+// Программа также должна учитывать, что во входной структуре будут повторяющиеся имена
+// с разными телефонами, их необходимо считать, как одного человека с разными телефонами. 
 // Вывод должен быть отсортирован по убыванию числа телефонов.
 
 // Решение
-// ================================================================================================================
-
-// import java.util.*;
+// ===================================================================================================
 // public class sem5 {
-//     public static void main(String[] args) {
-//         Map<String, List<String>> phoneBook = new HashMap<>();
-//         phoneBook.put("Иван Арбузов", Arrays.asList("81-811", "62-225"));
-//         phoneBook.put("Светлана Борисова", Collections.singletonList("33-303"));
-//         phoneBook.put("Екатерина Белова", Collections.singletonList("44-344"));
-//         phoneBook.put("Анна Володина", Collections.singletonList("45-587"));
-//         phoneBook.put("Анна Круглова", Collections.singletonList("12-426"));
-//         phoneBook.put("Иван Горин", Collections.singletonList("31-957"));
-//         phoneBook.put("Петр Лацков", Collections.singletonList("58-887"));
-//         phoneBook.put("Павел Мамаев", Collections.singletonList("99-399"));
-//         phoneBook.put("Петр Николаев", Arrays.asList("87-874", "13-552"));
-//         phoneBook.put("Мария Осипова", Collections.singletonList("11-722"));
-//         phoneBook.put("Марина Орлова", Collections.singletonList("38-444"));
-//         phoneBook.put("Мария Савина", Collections.singletonList("59-666"));
-//         phoneBook.put("Мария Ракова", Collections.singletonList("37-811"));
-//         phoneBook.put("Марина Сысоева", Arrays.asList("66-442", "53-275"));
-//         phoneBook.put("Анна Тихомирова", Collections.singletonList("41-033"));
-//         phoneBook.put("Иван Ухов", Collections.singletonList("12-404"));
-//         phoneBook.put("Петр Федин", Collections.singletonList("30-550"));
-//         phoneBook.put("Иван Чижов", Collections.singletonList("54-656"));
 
-//         Map<String, Integer> nameCount = new HashMap<>();
-//         for (String name : phoneBook.keySet()) {
-//             String firstName = name.split(" ")[0];
-//             nameCount.put(firstName, nameCount.getOrDefault(firstName, 0) + 1);
+//     static void sortedPrint(Map<String, ArrayList> map) {
+      
+//         Set<String> keySet = map.keySet();
+
+//         int maxCount = 0;
+//         int minCount = 1_00;
+        
+//         for (var item : map.entrySet()) {
+//             if (maxCount < item.getValue().size())
+//                 maxCount = item.getValue().size();
+//             if (minCount > item.getValue().size())
+//                 minCount = item.getValue().size();  
 //         }
-
-//         List<Map.Entry<String, Integer>> sortedNames = new ArrayList<>(nameCount.entrySet());
-//         Collections.sort(sortedNames, Map.Entry.<String, Integer>comparingByValue().reversed());
-
-//         for (Map.Entry<String, Integer> entry : sortedNames) {
-//             if (entry.getValue() > 1) {
-//                 System.out.println(entry.getKey() + ": " + entry.getValue());
+         
+//         Stack<String> st = new Stack<>();
+//         int num = minCount;
+//         while (num <= maxCount) {
+            
+//             for (var item : map.entrySet()) {
+//                 if (item.getValue().size() == num) {
+//                     st.push(item.getKey());
+//                 }  
+//             }
+//             num += 1;
+//         }
+        
+//         String name;
+//         for (int i = 0; i < keySet.size(); i++) {
+//             name = st.pop();
+//             for (var item : map.entrySet()) {
+//                 if (name == item.getKey()) {
+//                     System.out.printf("%8s: ", item.getKey());
+//                     System.out.println(item.getValue());
+//                 }
 //             }
 //         }
-//     }    
+//         System.out.println();
+//     }
+   
+//     public static void main(String[] args) {
+        
+//         Map<String, ArrayList> abon = new HashMap<>() {
+//             {
+//                 put("Иванов", new ArrayList<Integer>() {
+//                     {
+//                         add(87);
+//                         add(88);
+//                         add(92);
+//                     }
+//                 });
+//                 put("Борисов", new ArrayList<Integer>() {
+//                     {
+//                         add(12);
+//                     }
+//                 });
+//                 put("Петров", new ArrayList<Integer>() {
+//                     {
+//                         add(83);
+//                         add(23);
+
+//                     }
+//                 });
+//                 put("Сидоров", new ArrayList<Integer>() {
+//                     {
+//                         add(89);
+//                         add(55);
+//                         add(18);
+//                         add(99);
+//                     }
+//                 });
+//             }
+//         };
+//         System.out.println();        
+//         System.out.println("Исходные данные: ");
+//         sortedPrint(abon);
+        
+//         Scanner scan = new Scanner(System.in, "cp866");
+//         Boolean getOut = false;
+//         String st;
+//         while (!getOut) {
+//             System.out.println("Введите действие (1 - добавить абонента, 9 - выйти из программы):");
+//             st = scan.nextLine();
+//             String name = "";
+//             String phString;
+//             switch (st) {
+//                 case "1": {
+//                     System.out.println("Введите фамилию абонента:");
+//                     name = scan.nextLine();
+//                     if (abon.containsKey(name)) {
+//                         System.out.println("Такая есть. Введите другую!");
+//                         System.out.println();
+//                         break;
+//                     } else {
+//                         System.out.println("Введите номера телефонов через запятую: ");
+//                         phString = scan.nextLine();
+//                         String[] arr = phString.split(",");
+//                         ArrayList<Integer> arrInt = new ArrayList<>();
+//                         for (String item: arr) {
+//                             arrInt.add(Integer.parseInt(item.trim())) ;
+//                         }
+//                         abon.put(name, arrInt);
+//                         System.out.println();
+//                         sortedPrint(abon);
+//                         break;
+//                     }
+//                 }
+//                 case "9": {
+//                     getOut = true;
+//                     System.out.println();
+//                     System.out.println("До свидания!");
+//                     System.out.println();
+//                     break;
+//                 }   
+                    
+               
+//             }
+//         }
+//     }
+
 // }
