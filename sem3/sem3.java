@@ -71,25 +71,29 @@ package sem3;
 // Решение
 
 // import java.util.*;
+
 // public class sem3 {
+//     public static void main(String[] arg) {
+//         planetsCounter(5);
+
+//     }
+
 //     static void planetsCounter(int n){
-//         List<String> listPlanets = List.of("Меркурий", "Венера", "Земля", "Марс", "Юпитер", "Сатурн");
-//         List<String> randPlanets = new ArrayList<String>(n);
-//         int count = new int[listPlanets.size()];
+//         List<String> listPlanets = List.of("Mercury", "Venus", "Earth", "Mars", "Jupiter");
+//         List<String> randPlanets = new ArrayList<String>(new HashSet<String>(n));
+//         int[] counts = new int[listPlanets.size()];
 
 //         Random rand = new Random();
 
 //         for (int i = 0; i < n; i++) {
 //             randPlanets.add(listPlanets.get(rand.nextInt(listPlanets.size())));
-//             System.out.println(randPlanets.get(i) + " ");
-//             counts[listPlanets.indexOf(listPlanets.get(i))]++;
+//             System.out.print(randPlanets.get(i) + " ");
+//             counts[listPlanets.indexOf(randPlanets.get(i))]++;
 //         }
 //         System.out.println();
-
-//     for (String planet : randPlanets)  {
-
-//     }
-//     }
-    
+//         for (int i = 0; i < counts.length; i++) {
+//             System.out.printf("%s - %s\n", listPlanets.get(i), counts[i]);
+//         }  
+//     }   
 // }
-    
+
