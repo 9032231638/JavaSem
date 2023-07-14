@@ -75,12 +75,13 @@ package sem3;
 // public class sem3 {
 //     public static void main(String[] arg) {
 //         planetsCounter(5);
-
+    
 //     }
 
 //     static void planetsCounter(int n){
 //         List<String> listPlanets = List.of("Mercury", "Venus", "Earth", "Mars", "Jupiter");
-//         List<String> randPlanets = new ArrayList<String>(new HashSet<String>(n));
+//         List<String> randPlanets = new ArrayList<String>(n);
+//         Set<String> set = new HashSet<>(randPlanets);
 //         int[] counts = new int[listPlanets.size()];
 
 //         Random rand = new Random();
@@ -96,4 +97,5 @@ package sem3;
 //         }  
 //     }   
 // }
+
 
